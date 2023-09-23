@@ -1,0 +1,42 @@
+import turtle
+turtle.shape('turtle')
+
+def fank(l):
+    for i in range(12):
+        turtle.forward(l)
+        turtle.left(10)
+        turtle.forward(l)
+        turtle.left(10)
+        turtle.forward(l)
+        turtle.left(10)   
+
+def func(m):
+    for i in range(7):
+        turtle.forward(m)
+        turtle.left(30)
+
+turtle.begin_fill()
+turtle.color('yellow')
+fank(20)
+turtle.end_fill()
+turtle.left(65)
+turtle.forward(170)
+turtle.begin_fill()
+turtle.color('blue')
+fank(3)
+turtle.end_fill()
+turtle.penup()
+turtle.left(100)
+turtle.forward(100)
+turtle.pendown()
+turtle.begin_fill()
+turtle.color('blue')
+fank(3)
+turtle.end_fill()
+turtle.penup()
+turtle.left(100)
+turtle.forward(100)
+turtle.pendown()
+turtle.width(5)
+turtle.color('red')
+func(20)

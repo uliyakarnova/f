@@ -1,0 +1,17 @@
+import turtle
+l=5
+def fank(l):
+    for i in range(12):
+        turtle.forward(l)
+        turtle.left(10)
+        turtle.forward(l)
+        turtle.left(10)
+        turtle.forward(l)
+        turtle.left(10)   
+turtle.shape('turtle')
+for i in range(10):
+   fank(l)
+   turtle.left(180)
+   fank(l)
+   turtle.left(180)
+   l=l+2

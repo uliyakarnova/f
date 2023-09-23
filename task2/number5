@@ -1,0 +1,25 @@
+import turtle
+l=10
+# turtle.speed(speed=1)
+for i in range(10):
+    l=l+20
+    turtle.shape('turtle')
+    turtle.forward(l)
+    turtle.left(90)
+    turtle.forward(l)
+    turtle.left(90)
+    turtle.forward(l)
+    turtle.left(90)
+    turtle.forward(l)
+    turtle.left(90)
+    turtle.penup()
+    turtle.right(90)
+    turtle.penup()
+    turtle.right(90)
+    turtle.forward(10)
+    turtle.left(90)
+    turtle.forward(10)
+    turtle.left(90)
+    
+    turtle.pendown()
+turtle.mainloop()

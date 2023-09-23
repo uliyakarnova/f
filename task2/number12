@@ -1,0 +1,11 @@
+import turtle
+def func(m):
+    for i in range(15):
+        turtle.forward(m)
+        turtle.left(20)
+
+for i in range(20):
+    func(20)
+    turtle.left(60)
+
+

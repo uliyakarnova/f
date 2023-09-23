@@ -1,0 +1,10 @@
+import turtle
+
+turtle.shape('turtle')
+for i in range(15):
+    turtle.forward(5)
+    turtle.left(10)
+    turtle.forward(5)
+    turtle.left(10)
+    turtle.forward(5)
+    turtle.left(10)
