@@ -1,0 +1,7 @@
+from random import *
+import turtle
+
+for i in range(100):
+    x=[turtle.left(randint(0, 360)), turtle.right(randint(0, 360))]
+    x[randint(0, 1)]
+    turtle.forward(randint(5, 50))
