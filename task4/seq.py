@@ -12,7 +12,9 @@ class Sequence(object):
         # from the given string.                                              #
         #######################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-        
+
+        self.sequence = string
+
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
     def transcribe(self) -> None:
@@ -27,17 +29,13 @@ class Sequence(object):
         # of DNA or RNA classes                                               #
         #######################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
+
+        return error
         
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     
     def hamming_distance(self, sequence) -> int:
-        """
-        Input:
-        - sequence : another sequence of 'A's, 'T's, 'G's, 'C's, 'U's
-
-        Output: number of different letters 
-        between sequence attribute and given string sequence
-        """
+        
         #######################################################################
         # TODO:                                                               #
         # First, check that attribute_name and given string have the same     #
@@ -45,8 +43,21 @@ class Sequence(object):
         # If the length of strings is the same, loop over one of the strings  #
         # and count different letters.                                        #
         #######################################################################
+
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-        
+        self.sequence2 = string2
+        i=0
+        mismatch=0
+        if len(self.sequence) == len(self.sequence2):
+            while i<len(self.attribute_name):
+                if self.sequence[i] == self.sequence2[i]:
+                    mismatch+=0
+                else:
+                    mismatch+=1
+                i+=1
+            return mismatch 
+        else:
+            return "error"
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
 class DNA(Sequence):
@@ -65,6 +76,12 @@ class DNA(Sequence):
         # looping over attribute_name or using a standard string method.      #
         #######################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
+
+        self.attribute_name = string
+
+        for nucleotide in ["A", "T", "G", "C"]:
+            count = self.attribute_name.count(nucleotide)
+            output_dict[nucleotide] = count
         
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
@@ -83,6 +100,11 @@ class DNA(Sequence):
         #######################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         
+        self.attribute_name = self.attribute_name.replace("T", "a")
+        self.attribute_name = self.attribute_name.replace("A", "t")
+        self.attribute_name = self.attribute_name.replace("G", "c")
+        complited_DNA = self.attribute_name.replace("C", "g")
+        
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
     def transcribe(self) -> str:
@@ -98,7 +120,10 @@ class DNA(Sequence):
         # to the empty string.                                                #
         #######################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-        
+
+        return self.attribute_name.replace("U", "T")
+    
+
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     
     
@@ -118,7 +143,14 @@ class RNA(Sequence):
         # Counting 'A's, 'U's, 'G's, 'C's either by                           #
         # looping over attribute_name or using a standard string method.      #
         #######################################################################
+
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
+
+        output_dict = {}
+
+        for nucleotide in ["A", "T", "G", "C"]:
+            count = self.attribute_name.count(nucleotide)
+            output_dict[nucleotide] = count
         
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
@@ -136,4 +168,6 @@ class RNA(Sequence):
         #######################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         
+        return self.attribute_name.replace("U", "T")
+
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
